@@ -4,19 +4,26 @@
   "description": "MERN shopping app",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server"
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/farhanshahriyar/VentureShop.git"
+    "url": "git+https://github.com/farhanshahriyar/ventureshop.git"
   },
   "author": "MD FARHAN SHAHRIYAR",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/farhanshahriyar/VentureShop/issues"
+    "url": "https://github.com/farhanshahriyar/ventureshop/issues"
   },
-  "homepage": "https://github.com/farhanshahriyar/VentureShop#readme",
+  "homepage": "https://github.com/farhanshahriyar/ventureshop#readme",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "nodemon": "^2.0.16"
   }
 }
