@@ -4,7 +4,6 @@ import colors from 'colors'
 import connectDB from './config/db.js' // for db conenction
 import products from './data/products.js' //product c
 
-
 dotenv.config()
 
 connectDB()
@@ -20,7 +19,9 @@ app.get('/api/products', (req, res) => {
 })
 
 app.get('/api/products/:id', (req, res) => {
-    const product = products.find(p=> p._id === req.params.id)
+    console.log(req.params)
+    const product = products.find((p) => p._id === parseInt(req.params.id))
+    console.log(product)
     res.json(product)
 })
 
